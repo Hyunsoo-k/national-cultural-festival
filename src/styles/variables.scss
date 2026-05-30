@@ -23,7 +23,8 @@ $breakpoint-desktop: 75rem;
 }
 
 // z-index
-$Header-zidnex: 10;
+$header-zidnex: 10;
+$navbar-zindex: 5;
 $backdrop-zindex: 20;
 $modal-zindex: 30;
 
@@ -31,9 +32,9 @@ $modal-zindex: 30;
 $max-width: 75rem;
 
 // height
-$header-height-mobile: 4rem;
-$header-height-tablet: 5rem;
-$header-height-desktop: 6rem;
+$header-height-mobile: 3rem;
+$header-height-tablet: 4rem;
+$header-height-desktop: 4.5rem;
 
 // screen-padding
 $screen-padding-mobile: 1rem;
@@ -46,7 +47,7 @@ $content-padding-tabelt: 1rem;
 $content-padding-desktop: 1.2rem;
 
 // border
-$border-base: #DFE7E2;
+$border-base: #D4C9BB;
 $radius: 10px;
 
 // background-color
