@@ -1,4 +1,4 @@
-import { HeroSection } from '@/components/HeroSection/HeroSection';
+import { HeroSection } from '@/components/sections/HeroSection/HeroSection';
 import { SectionDivider } from '@/components/ui/SectionDivider/SectionDivider';
 
 import styles from './page.module.scss';
