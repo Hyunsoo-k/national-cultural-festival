@@ -1,0 +1,62 @@
+// break-point
+$breakpoint-mobile: 48rem;
+$breakpoint-tablet: 64rem;
+$breakpoint-desktop: 75rem;
+
+// media-query
+@mixin tablet {
+  @media (min-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin wide {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+// z-index
+$Header-zidnex: 10;
+$backdrop-zindex: 20;
+$modal-zindex: 30;
+
+// max-width
+$max-width: 75rem;
+
+// height
+$header-height-mobile: 4rem;
+$header-height-tablet: 5rem;
+$header-height-desktop: 6rem;
+
+// screen-padding
+$screen-padding-mobile: 1rem;
+$screen-padding-tablet: 1.5rem;
+$screen-padding-desktop: 2rem;
+
+// content-padding
+$content-padding-mobile: 0.8rem;
+$content-padding-tabelt: 1rem;
+$content-padding-desktop: 1.2rem;
+
+// border
+$border-base: #DFE7E2;
+$radius: 10px;
+
+// background-color
+$bg-base: #F6F2ED;
+$bg-secondary: #1C1914;
+$bg-active: #C94B1C;
+
+// font-color
+$text-base: #1A1712;
+$text-secondary: #7A7268;
+$text-invers: #FFFFFF;
+$text-invers-secondary: #FFFFFF73;
+$text-active: #C94B1C;
