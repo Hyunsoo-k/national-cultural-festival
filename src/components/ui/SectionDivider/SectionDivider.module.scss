@@ -1,0 +1,46 @@
+@use '@/styles/variables' as *;
+
+.sectionDivider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: $screen-padding-mobile * 2 $screen-padding-mobile;
+
+  @include tablet {
+    padding: $screen-padding-tablet * 2 $screen-padding-tablet;
+  }
+
+  @include tablet {
+    padding: $screen-padding-desktop * 2 $screen-padding-desktop;
+  }
+
+  .label {
+    font-family: var(--font-dm-serif-display), sans-serif;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: $text-secondary;
+    letter-spacing: 2px;
+
+    @include tablet {
+      font-size: 1rem;
+    }
+  }
+
+  .line {
+    flex: 1;
+    height: 1px;
+    background-color: $border-base;
+  }
+
+  .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: $bg-active;
+
+    @include tablet {
+      width: 8px;
+      height: 8px;
+    }
+  }
+}
