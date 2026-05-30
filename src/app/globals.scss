@@ -10,6 +10,8 @@ body {
 
 body {
   min-height: 100%;
+  font-family: var(--font-noto-sans-kr), sans-serif;
+  
 }
 
 * {
@@ -21,4 +23,17 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
