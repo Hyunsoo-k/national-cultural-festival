@@ -1,3 +1,5 @@
+@use '@/styles/variables' as *;
+
 html {
   height: 100%;
 }
@@ -10,8 +12,17 @@ body {
 
 body {
   min-height: 100%;
+  padding-top: $header-height-mobile;
+  background-color: $bg-base;
   font-family: var(--font-noto-sans-kr), sans-serif;
-  
+
+  @include tablet {
+    padding-top: $header-height-tablet;
+  }
+
+  @include desktop {
+    padding-top: $header-height-desktop;
+  }
 }
 
 * {
@@ -29,6 +40,7 @@ button {
   padding: 0;
   border: none;
   background-color: inherit;
+  color: inherit;
   cursor: pointer;
 }
 
