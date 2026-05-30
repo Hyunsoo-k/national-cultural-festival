@@ -1,0 +1,82 @@
+@use '@/styles/variables' as *;
+
+.header {
+  position: fixed;
+  z-index: $header-zidnex;
+  inset: 0;
+  width: 100dvw;
+  height: $header-height-mobile;
+  border-bottom: 1px solid $border-base;
+  background-color: $bg-base;
+
+  @include tablet {
+    height: $header-height-tablet;
+  }
+
+  @include desktop {
+    height: $header-height-desktop;
+  }
+
+  .inner {
+    position: relative;
+    z-index: $header-zidnex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 $screen-padding-mobile;
+    background-color: $bg-base;
+
+    @include tablet {
+    padding: 0 $screen-padding-tablet;
+  }
+
+  @include desktop {
+    padding: 0 $screen-padding-desktop;
+  }
+
+    .logoArea {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      font-family: var(--font-noto-serif-kr), sans-serif;
+
+      .logo {
+        font-size: 1.2rem;
+        font-weight: 500;
+
+        @include tablet {
+          font-size: 1.5rem;
+        }
+      }
+
+      .logoSub {
+        display: none;
+
+        @include tablet {
+          display: block;
+          font-size: 0.65rem;
+          color: $text-secondary;
+        }
+      }
+    }
+
+    .burgerBtn {
+      position: relative;
+      top: 3px;
+
+      @include tablet {
+        top: 2px;
+      }
+
+      .burgerIcon {
+        font-size: 1.1rem;
+
+        @include tablet {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
