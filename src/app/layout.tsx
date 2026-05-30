@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { notoSansKr, notoSerifKr } from "./fonts";
+import { notoSansKr, notoSerifKr, dmSerifDisplay } from "./fonts";
 
 import './globals.scss';
 import { Header } from '@/components/layouts/Header/Header';
@@ -16,7 +16,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='ko' className={`${notoSansKr.variable} ${notoSerifKr.variable}`}>
+    <html
+      lang='ko'
+      className={`
+        ${notoSansKr.variable} 
+        ${notoSerifKr.variable}
+        ${dmSerifDisplay.variable}
+      `}
+    >
       <body>
         <Header />
         {children}
