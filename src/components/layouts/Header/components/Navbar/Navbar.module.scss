@@ -1,0 +1,51 @@
+@use '@/styles/variables' as *;
+
+.navbar {
+  position: absolute;
+  z-index: $navbar-zindex;
+  top: $header-height-mobile;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 100dvw;
+  height: 2.8rem;
+  background-color: $bg-base;
+  border-bottom: 1px solid $border-base;
+  transition: transform 0.3s ease-in-out;
+
+  @include tablet {
+    top: $header-height-tablet;
+  }
+
+  @include desktop {
+    top: $header-height-desktop;
+  }
+
+  &.open {
+    transform: translateY(0); 
+  }
+
+  &.close {
+    transform: translateY(-100%);
+  }
+
+  .list {
+    display: flex;
+    justify-content: space-between;
+    width: 7rem;
+    margin: 0 auto;
+    color: $text-secondary;
+
+    .item {
+      font-size: 0.9rem;
+      
+      @include tablet {
+        cursor: pointer;
+
+        &:hover {
+          color: $text-active;
+        }
+      }
+    }
+  }
+}
