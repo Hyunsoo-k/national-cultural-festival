@@ -4,7 +4,7 @@ import { QUERY_KEYS } from '@/constants/queryKeys';
 import { REALMS } from '@/constants/realms';
 import { getAreas } from '@/services/getAreas';
 import { getRealms } from '@/services/getRealms';
-import { HeroSection } from '@/components/sections/HeroSection/HeroSection';
+import { HomeHeroSection } from '@/components/sections/HomeHeroSection/HomeHeroSection';
 import { SectionDivider } from '@/components/ui/SectionDivider/SectionDivider';
 import { HomeSection } from '@/components/sections/HomeSection/HomeSection';
 
@@ -27,7 +27,7 @@ export default async function Home() {
     <div className={styles.page}>
       <main className={styles.main}>
         <HydrationBoundary state={dehydrate(queryClient)}>
-          <HeroSection />
+          <HomeHeroSection />
           <SectionDivider label='AREA' />
           <HomeSection
             category='area'
