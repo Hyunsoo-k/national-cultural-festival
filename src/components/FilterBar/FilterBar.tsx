@@ -1,36 +1,31 @@
 'use client';
 
-import { useState } from 'react';
-
 import styles from './FilterBar.module.scss';
 
-type Props = {
-  items: string[];
-  onClick: () => void;
+type FilterItem = {
+  readonly code: string;
+  readonly name: string;
 };
 
-export const FilterBar = ({ items, onClick }: Props) => {
-  const [selected, setSelected] = useState<string>(items[0]);
+type Props = {
+  items: readonly FilterItem[];
+  selectedFilter: string | undefined;
+  onClick: (value: string) => void;
+};
 
-  const handleItemSelect = (value: string) => {
-    setSelected(value);
-    onClick();
-  };
+export const FilterBar = ({ items, selectedFilter, onClick }: Props) => {
 
   return (
     <div className={styles.filterBar}>
       <ul className={styles.list}>
-        {items.map((item: string) => (
-          <li
-            key={item}
-            onClick={() => handleItemSelect(item)}
-            className={styles.item}
-          >
+        {items.map((item) => (
+          <li key={item.code} className={styles.item}>
             <button
-              onClick={() => handleItemSelect(item)}
-              className={`${styles.btn} ${selected === item ? styles.selected : ''}`}
+              type="button"
+              onClick={() => onClick(item.code)}
+              className={`${styles.btn} ${selectedFilter === item.code ? styles.selected : ''}`}
             >
-              {item}
+              {item.name}
             </button>
           </li>
         ))}
