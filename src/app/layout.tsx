@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 import QueryProvider from '@/components/QueryProvider/QueryProvider';
 import { Header } from '@/components/layouts/Header/Header';
+import { Footer } from '@/components/layouts/Footer/Footer';
 
 import { notoSansKr, notoSerifKr, dmSerifDisplay } from "./fonts";
 import './globals.scss';
@@ -29,6 +30,7 @@ export default function RootLayout({
         <QueryProvider>
           <Header />
           {children}
+          <Footer />
         </QueryProvider>
       </body>
     </html>
