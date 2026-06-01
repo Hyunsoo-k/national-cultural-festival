@@ -2,11 +2,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { SlArrowDown } from "react-icons/sl";
 
-import styles from './HeroSection.module.scss';
+import styles from './HomeHeroSection.module.scss';
 
-export const HeroSection = () => {
+export const HomeHeroSection = () => {
   return (
-    <section className={styles.heroSection}>
+    <section className={styles.homeHeroSection}>
       <div className={styles.textArea}>
         <div className={styles.eyeBrow}>
           KOREA CULTURE FESTIVAL GUIDE
