@@ -1,5 +1,5 @@
 import { AreaOrRealmItem } from './areaOrRealmItem';
-import { DetailItem } from '../constants/detailItem';
+import { DetailItem } from './detailItem';
 import { CalendarItem } from './calenderItem';
 import { Category } from './category';
 
