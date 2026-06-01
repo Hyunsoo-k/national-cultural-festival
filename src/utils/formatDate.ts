@@ -1,4 +1,4 @@
-export const formatDate = (date: number) => {
+export const formatDate = (date: number | string) => {
   const stringDate = date.toString();
   const year = stringDate.slice(0, 4);
   const month = stringDate.slice(4, 6);
