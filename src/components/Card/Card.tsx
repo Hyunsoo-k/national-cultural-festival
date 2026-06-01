@@ -16,7 +16,7 @@ type Props = {
 export const Card = ({ item }: Props) => {
   
   return (
-    <Link href={`/detail/${item.seq}`} className={styles.card}>
+    <Link href={`/detail/${item.seq}?gpsX=${item.gpsX}&gpsY=${item.gpsY}`} className={styles.card}>
       <div className={styles.thumbnailWrapper}>
         <Image src={item.thumbnail} alt={item.title} fill />
       </div>
