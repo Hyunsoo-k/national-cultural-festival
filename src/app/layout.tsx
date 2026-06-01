@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 
-import { notoSansKr, notoSerifKr, dmSerifDisplay } from "./fonts";
-
-import './globals.scss';
+import QueryProvider from '@/components/QueryProvider/QueryProvider';
 import { Header } from '@/components/layouts/Header/Header';
+
+import { notoSansKr, notoSerifKr, dmSerifDisplay } from "./fonts";
+import './globals.scss';
 
 export const metadata: Metadata = {
   title: '전국문화축제',
@@ -25,8 +26,10 @@ export default function RootLayout({
       `}
     >
       <body>
-        <Header />
-        {children}
+        <QueryProvider>
+          <Header />
+          {children}
+        </QueryProvider>
       </body>
     </html>
   );
