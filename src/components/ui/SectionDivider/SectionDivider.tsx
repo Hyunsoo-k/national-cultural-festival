@@ -1,7 +1,7 @@
 import styles from './SectionDivider.module.scss';
 
 type Props = {
-  label: 'AREA' | 'PERIOD';
+  label: 'AREA' | 'PERIOD' | 'REALM';
 };
 
 export const SectionDivider = ({ label }: Props) => {
