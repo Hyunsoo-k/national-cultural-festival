@@ -1,0 +1,104 @@
+@use '@/styles/variables' as *;
+
+.footer {
+  margin-top: 2rem;
+  background-color: $bg-secondary;
+
+  @include tablet {
+    margin-top: 4rem;
+  }
+
+  .inner {
+    padding: 2rem $screen-padding-mobile;
+  
+    @include tablet {
+      padding: 3rem $screen-padding-tablet 2rem;
+    }
+
+    @include desktop {
+      padding: 4rem $screen-padding-desktop 3rem;
+    }
+
+    @include desktop {
+      max-width: $max-width;
+      margin: 0 auto;
+    }
+    
+    .body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+      
+
+      @include tablet {
+        display: grid;
+        grid-template: auto auto auto / auto auto;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      
+      .eyebrow {
+        font-size: 0.7rem;
+        color: $text-invers-secondary-on-bg-secondary;
+
+        @include tablet {
+          font-size: 0.9rem;
+        }
+      }
+
+      .title {
+        font-family: var(--font-noto-serif-kr), sans-serif;
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: $text-invers-on-bg-secondary;
+
+        @include tablet {
+          font-size: 1.5rem;
+        }
+      }
+
+      .description {
+        font-size: 0.7rem;
+        color: $text-invers-thirdly-on-bg-secondary;
+
+        @include tablet {
+          font-size: 0.8rem;
+        }
+      }
+
+      .subTitle {
+        display: none;
+
+        @include tablet {
+          display: flex;
+          justify-content: end; 
+          align-items: center;
+          grid-area: 1 / 2 / 5 / 3;
+          font-family: var(--font-dm-serif-display), sans-serif;
+          font-style: italic;
+          font-size: 1.3rem;
+          color: $text-invers-secondary-on-bg-secondary;
+          letter-spacing: 1px;
+        }
+      }
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 1rem;
+      border-top: 1px solid #2E2A24;
+
+      .copyright, .dataSource {
+        font-size: 0.7rem;
+        font-weight: 300;
+        color: $text-invers-thirdly-on-bg-secondary;
+
+        @include tablet {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
