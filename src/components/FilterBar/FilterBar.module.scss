@@ -1,0 +1,42 @@
+@use '@/styles/variables' as *;
+
+.filterBar {
+  width: 100%;
+  padding: 0 $screen-padding-mobile;
+
+  @include tablet {
+    padding: 0 $screen-padding-tablet;
+  }
+
+  @include desktop {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 $screen-padding-desktop;
+  }
+  
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    .item {
+
+      .btn {
+        padding: 0.3rem 0.8rem;
+        border: 1px solid $border-base;
+        font-size: 0.8rem;
+        color: $text-secondary;
+
+        @include tablet {
+          padding: 0.4rem 1.2rem;
+          font-size: 0.9rem;
+        }
+
+        &.selected {
+          background-color: $bg-active;
+          color: $text-invers;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@use '@/styles/variables' as *;
+
+.homeSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 2rem;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 $screen-padding-mobile;
+
+    @include tablet {
+      padding: 0 $screen-padding-tablet;
+    }
+
+    @include desktop {
+      max-width: $max-width;
+      margin: 0 auto;
+      padding: 0 $screen-padding-desktop;
+    }
+
+    .title {
+      font-family: var(--font-noto-serif-kr), sans-serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+
+      @include desktop {
+        font-size: 1.8rem;
+      }
+    }
+
+    .viewMoreBtn {
+      display: flex;
+      align-items: center;
+      font-size: 0.8rem;
+      color: $text-active;
+
+      @include desktop {
+        font-size: 1rem;
+      }
+
+      .arrowIcon {
+        margin-left: 0.5rem;
+        font-size: 1rem;
+
+        @include desktop {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
