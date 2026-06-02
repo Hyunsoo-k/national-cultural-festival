@@ -28,11 +28,11 @@ export default async function ItemsPage({ searchParams }: Props) {
   });
 
   return (
-    <div className={styles.itemsPage}>
+    <main className={styles.itemsPage}>
       <ItemsHeroSection />
       <HydrationBoundary state={dehydrate(queryClient)}>
         <ItemsPageContainer category={category} />
       </HydrationBoundary>
-    </div>
+    </main>
   )
 };
