@@ -2,17 +2,6 @@
 
 .filterBar {
   width: 100%;
-  padding: 0 $screen-padding-mobile;
-
-  @include tablet {
-    padding: 0 $screen-padding-tablet;
-  }
-
-  @include desktop {
-    max-width: $max-width;
-    margin: 0 auto;
-    padding: 0 $screen-padding-desktop;
-  }
   
   .list {
     display: flex;
