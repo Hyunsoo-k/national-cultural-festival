@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 import { GoArrowRight } from "react-icons/go";
 
@@ -58,10 +59,10 @@ export const HomeSection = ({ category, title }: Props) => {
       />
       <header className={styles.header}>
         <h2 className={styles.title}>{title}</h2>
-        <button className={styles.viewMoreBtn}>
+        <Link href={`/items?category=${category}`} className={styles.viewMoreBtn}>
           전체보기
           <GoArrowRight className={styles.arrowIcon}/>
-        </button>
+        </Link>
       </header>
       {['area', 'realm'].includes(category) && (
         <Slider isFetching={isFetching} items={items as AreaOrRealmItem[]} />
