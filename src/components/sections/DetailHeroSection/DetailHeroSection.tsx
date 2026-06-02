@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import { DetailItem } from '@/types/detailItem';
 import { decodeHtml } from '@/utils/decodeHtml';
+import { ScreenPaddingWrapper } from '@/components/layouts/ScreenPaddingWrapper/ScreenPaddingWrapper';
 
 import styles from './DetailHeroSection.module.scss';
 
@@ -20,10 +21,12 @@ export const DetailHeroSection = ({ item }: Props) => {
       <div className={styles.imgWrapper}>
         <Image src={item.imgUrl} alt={item.title} fill className={styles.img} />
       </div>
-      <div className={styles.info}>
-        <span className={styles.realmName}>{item.realmName}</span>
-        <h2 className={styles.title}>{decodeHtml(item.title)}</h2>
-      </div>
+      <ScreenPaddingWrapper>
+        <div className={styles.info}>
+          <span className={styles.realmName}>{item.realmName}</span>
+          <h2 className={styles.title}>{decodeHtml(item.title)}</h2>
+        </div>
+      </ScreenPaddingWrapper>
     </section>
   );
 };
