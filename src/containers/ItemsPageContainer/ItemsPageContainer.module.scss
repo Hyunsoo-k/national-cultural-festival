@@ -1,0 +1,60 @@
+@use '@/styles/variables' as *;
+
+.itemsPageContainer {
+  padding: 0 $screen-padding-mobile;
+
+  @include tablet {
+    padding: 0 $screen-padding-desktop;
+  }
+
+  @include desktop {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 $screen-padding-desktop;
+  }
+
+  .categories {
+    display: flex;
+    overflow: hidden;
+    width: 80%;
+    max-width: 35rem;
+    margin: 2rem auto;
+    border-radius: $radius;
+
+    @include tablet {
+      margin: 4rem auto 3rem;
+    }
+
+    .category {
+      width: 50%;
+      padding: 0.5rem 0;
+      border: 1px solid $border-base;
+      background-color: #1A2E1A;
+      font-size: 0.9rem;
+      color: $text-invers;
+      text-align: center;
+
+      @include tablet {
+        padding: 0.7rem 0;
+      }
+
+      &.selected {
+        background-color: $bg-active;
+        color: $text-invers;
+      }
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 2rem;
+      column-gap: 1rem;
+    }
+  }
+}
