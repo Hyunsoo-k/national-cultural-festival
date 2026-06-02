@@ -1,3 +1,5 @@
+import { RealmName } from './realmName';
+
 export interface AreaOrRealmItem {
   serviceName: string;
   seq: string;
@@ -5,7 +7,7 @@ export interface AreaOrRealmItem {
   startDate: number;
   endDate: number;
   place: string;
-  realmName: string;
+  realmName: RealmName;
   area: string;
   thumbnail: string;
   gpsX: number;

@@ -20,18 +20,22 @@ type Props = {
 };
 
 export const HomeSection = ({ category, title }: Props) => {
+  const areasValues = Object.keys(AREAS);
+  const realmsValues = Object.keys(REALMS);
+
   const [selectedFilter, setSelectedFilter] = useState<string>(
-    category === 'area' ? AREAS[0].code : REALMS[0].code
+    category === 'area' ? areasValues[0] : realmsValues[0]
   );
 
   const {
     data: areasData,
     isFetching: isAreasFetching
   } = useGetAreas(category, selectedFilter);
+
   const {
     data: realmsData,
     isFetching: isRealmsFetching
-  } = useGetRealms(category, selectedFilter);
+  } = useGetRealms(category, REALMS[selectedFilter]);
 
   const isFetching = category === 'area' ? isAreasFetching : isRealmsFetching;
 
@@ -39,7 +43,7 @@ export const HomeSection = ({ category, title }: Props) => {
     ? areasData?.body?.items?.item
     : realmsData?.body?.items?.item;
   
-  const filterItems = category === 'area' ? AREAS : REALMS;
+  const filterItems = category === 'area' ? Object.keys(AREAS) : Object.keys(REALMS);
   
   const handleFilterClick = (value: string) => {
       setSelectedFilter(value);

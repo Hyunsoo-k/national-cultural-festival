@@ -22,7 +22,7 @@
               <CardSkeleton key={idx} />
             </li>
           ))}
-          {!isFetching && items.map((item: AreaOrRealmItem) => (
+          {!isFetching && items?.map((item: AreaOrRealmItem) => (
             <li key={item.title} className={styles.item}>
               <Card item={item} />
             </li>

@@ -6,11 +6,12 @@
   @include tablet {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    left: 0;
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: calc(100% + #{$screen-padding-tablet});
     margin: 0 auto;
+    transform: translate(-#{$screen-padding-tablet / 2}, -50%);
 
     .btn {
       width: 100px;
@@ -23,5 +24,10 @@
         font-size: 3rem;
       }
     }
+  }
+
+  @include desktop {
+    width: calc(100% + #{$screen-padding-desktop});
+    transform: translate(-#{$screen-padding-desktop / 2}, -50%);
   }
 }

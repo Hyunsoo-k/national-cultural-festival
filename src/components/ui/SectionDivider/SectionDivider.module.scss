@@ -10,7 +10,7 @@
     padding: $screen-padding-tablet * 2 $screen-padding-tablet;
   }
 
-  @include tablet {
+  @include desktop {
     max-width: $max-width;
     margin: 0 auto;
     padding: $screen-padding-desktop * 2 $screen-padding-desktop;
