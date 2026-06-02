@@ -4,16 +4,16 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: $screen-padding-mobile * 2 $screen-padding-mobile;
+  padding: $screen-padding-mobile * 2 0;
 
   @include tablet {
-    padding: $screen-padding-tablet * 2 $screen-padding-tablet;
+    padding: $screen-padding-tablet * 2 0;
   }
 
   @include desktop {
     max-width: $max-width;
     margin: 0 auto;
-    padding: $screen-padding-desktop * 2 $screen-padding-desktop;
+    padding: $screen-padding-desktop * 2 0
   }
 
   .label {

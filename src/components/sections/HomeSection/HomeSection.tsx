@@ -64,9 +64,7 @@ export const HomeSection = ({ category, title }: Props) => {
           <GoArrowRight className={styles.arrowIcon}/>
         </Link>
       </header>
-      {['area', 'realm'].includes(category) && (
-        <Slider isFetching={isFetching} items={items as AreaOrRealmItem[]} />
-      )}
+       <Slider isFetching={isFetching} items={items as AreaOrRealmItem[]} />
     </section>
   );
 };

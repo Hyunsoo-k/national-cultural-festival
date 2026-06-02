@@ -1,1 +1,1 @@
-export type Category = 'area' | 'realm' | 'calender' | 'detail';
+export type Category = 'area' | 'realm';

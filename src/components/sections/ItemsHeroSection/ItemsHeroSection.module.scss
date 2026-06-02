@@ -13,16 +13,16 @@
   }
 
   .inner {
-    padding: 4.5rem $screen-padding-mobile;
+    padding: 4.5rem 0;
 
     @include tablet {
-      padding: 6rem $screen-padding-tablet;
+      padding: 6rem 0;
     }
 
     @include desktop {
       max-width: $max-width;
       margin: 0 auto;
-      padding: 7.5rem $screen-padding-desktop
+      padding: 7.5rem 0;
     }
 
     .header {

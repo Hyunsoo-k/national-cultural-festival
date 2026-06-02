@@ -23,10 +23,10 @@ export default async function DetailPage({ params, searchParams }: Props) {
   });
 
   return (
-    <div className={styles.detailPage}>
+    <main className={styles.detailPage}>
       <HydrationBoundary state={dehydrate(queryClient)}>
         <DetailPageContainer seq={seq} realm={realm} gpsX={gpsX} gpsY={gpsY}/>
       </HydrationBoundary>
-    </div>
+    </main>
   );
 }

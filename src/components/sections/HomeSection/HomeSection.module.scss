@@ -4,16 +4,15 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 0 $screen-padding-mobile 2rem;
+  padding-bottom: 2rem;
 
   @include tablet {
-    padding: 0 $screen-padding-tablet;
+    padding: 0;
   }
 
   @include desktop {
     max-width: $max-width;
     margin: 0 auto;
-    padding: 0 $screen-padding-desktop;
   }
 
   .header {

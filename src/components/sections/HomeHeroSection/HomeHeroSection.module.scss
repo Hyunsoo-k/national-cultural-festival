@@ -5,17 +5,17 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: $screen-padding-mobile * 3 $screen-padding-mobile;
+  padding: $screen-padding-mobile * 3 0;
 
   @include tablet {
     flex-direction: row;
-    padding: $screen-padding-tablet * 4 $screen-padding-tablet;
+    padding: $screen-padding-tablet * 4 0;
   }
 
   @include desktop {
     max-width: $max-width;
     margin: 0 auto;
-    padding: $screen-padding-desktop * 4 $screen-padding-desktop;
+    padding: $screen-padding-desktop * 4 0;
   }
 
   &::before {
