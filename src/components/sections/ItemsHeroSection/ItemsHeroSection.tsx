@@ -1,4 +1,5 @@
 import { ScreenPaddingWrapper } from '@/components/layouts/ScreenPaddingWrapper/ScreenPaddingWrapper';
+
 import styles from './ItemsHeroSection.module.scss';
 
 export const ItemsHeroSection = () => {
