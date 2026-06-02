@@ -1,6 +1,7 @@
 @use '@/styles/variables' as *;
 
 .screenPaddingWrapper {
+  width: 100%;
   padding: 0 $screen-padding-mobile;
 
   @include tablet {
