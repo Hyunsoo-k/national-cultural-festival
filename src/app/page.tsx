@@ -20,7 +20,7 @@ export default async function Home() {
 
   await queryClient.prefetchQuery({
     queryKey: QUERY_KEYS.realms(),
-    queryFn: () => getRealms(REALMS[0].code),
+    queryFn: () => getRealms('F000'),
   });
 
   return (
