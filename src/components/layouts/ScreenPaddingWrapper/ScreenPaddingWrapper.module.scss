@@ -1,0 +1,13 @@
+@use '@/styles/variables' as *;
+
+.screenPaddingWrapper {
+  padding: 0 $screen-padding-mobile;
+
+  @include tablet {
+    padding: 0 $screen-padding-tablet;
+  }
+
+  @include desktop {
+    padding: 0 $screen-padding-desktop;
+  }
+}
