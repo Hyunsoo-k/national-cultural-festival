@@ -48,7 +48,7 @@ export const ItemsPageContainer = ({ category }: Props) => {
 
   return (
     <ScreenPaddingWrapper>
-      <main className={styles.itemsPageContainer}>
+      <div className={styles.itemsPageContainer}>
         <div className={styles.categories}>
           <Link
             href='/items?category=area'
@@ -78,7 +78,7 @@ export const ItemsPageContainer = ({ category }: Props) => {
             </li>
           ))}
         </ul>
-      </main>
+      </div>
     </ScreenPaddingWrapper>
   );
 };
