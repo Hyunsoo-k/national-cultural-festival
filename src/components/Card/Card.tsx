@@ -4,6 +4,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { PiCalendarMinusThin } from "react-icons/pi";
 
 import { AreaOrRealmItem } from '@/types/areaOrRealmItem';
+import { REALMS } from '@/constants/realms';
 import { decodeHtml } from '@/utils/decodeHtml';
 import { formatDate } from '@/utils/formatDate';
 
@@ -14,14 +15,18 @@ type Props = {
 };
 
 export const Card = ({ item }: Props) => {
+  const realmCode = REALMS[item.realmName as keyof typeof REALMS];
   
   return (
-    <Link href={`/detail/${item.seq}?gpsX=${item.gpsX}&gpsY=${item.gpsY}`} className={styles.card}>
+    <Link
+      href={`/detail/${item.seq}?realm=${realmCode}&gpsX=${item.gpsX}&gpsY=${item.gpsY}`}
+      className={styles.card}
+    >
       <div className={styles.thumbnailWrapper}>
         <Image src={item.thumbnail} alt={item.title} fill />
       </div>
       <div className={styles.info}>
-        <span className={styles.serviceName}>{item.serviceName}</span>
+        <span className={styles.realmName}>{item.realmName}</span>
         <h3 className={styles.title}>
           {decodeHtml(item.title)}
         </h3>
