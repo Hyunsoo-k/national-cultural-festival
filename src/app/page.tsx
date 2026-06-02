@@ -21,10 +21,10 @@ export default async function Home() {
   });
 
   return (
-    <div className={styles.page}>
+    <main className={styles.page}>
       <HydrationBoundary state={dehydrate(queryClient)}>
         <HomeContainer />
       </HydrationBoundary>
-    </div>
+    </main>
   );
 }
