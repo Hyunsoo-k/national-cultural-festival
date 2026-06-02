@@ -3,6 +3,7 @@
 .slider {
   overflow-x: auto;
   position: relative;
+  width: 100%;
   scrollbar-width: none;
 
   &::-webkit-scrollbar {
@@ -21,16 +22,7 @@
   .track {
     display: flex;
     gap: 1rem;
-    padding: 0 $screen-padding-mobile;
     transition: transform 0.3s ease-in-out;
-
-    @include tablet {
-      padding: 0 $screen-padding-tablet;
-    }
-
-    @include desktop {
-      padding: 0 $screen-padding-desktop;
-    }
 
     .item {
       flex-shrink: 0;
