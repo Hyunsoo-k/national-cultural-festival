@@ -15,34 +15,37 @@ import { Slider } from '@/components/Slider/Slider';
 
 import styles from './HomeSection.module.scss';
 
+const AREAS_VALUES = Object.keys(AREAS);
+const REALMS_VALUES = Object.keys(REALMS);
+
 type Props = {
   category: Category;
   title: string;
 };
 
 export const HomeSection = ({ category, title }: Props) => {
-  const areasValues = Object.keys(AREAS);
-  const realmsValues = Object.keys(REALMS);
-
   const [selectedFilter, setSelectedFilter] = useState<string>(
-    category === 'area' ? areasValues[0] : realmsValues[0]
+    category === 'area' ? AREAS_VALUES[0] : REALMS_VALUES[0]
   );
 
   const {
     data: areasData,
-    isFetching: isAreasFetching
+    isFetching: isAreasDataFetching
   } = useGetAreas(category, selectedFilter);
 
+  const realmCode = category === 'realm' ? REALMS[selectedFilter] ?? '' : '';
+
   const {
-    data: realmsData,
-    isFetching: isRealmsFetching
-  } = useGetRealms(category, REALMS[selectedFilter]);
+    data: reamlsData,
+    isFetching: isRealmsDataFetching
+  } = useGetRealms(category, realmCode);
 
-  const isFetching = category === 'area' ? isAreasFetching : isRealmsFetching;
+  const isFetching = category === 'area' ? isAreasDataFetching : isRealmsDataFetching;
 
-  const items = category === 'area'
-    ? areasData?.body?.items?.item
-    : realmsData?.body?.items?.item;
+  const areaItems = areasData?.pages.flatMap((page) => page.body.items.item);
+  const realmItems = reamlsData?.pages.flatMap((page) => page.body.items.item);
+
+  const itemsToRender = category === 'area' ? areaItems : realmItems;
   
   const filterItems = category === 'area' ? Object.keys(AREAS) : Object.keys(REALMS);
   
@@ -64,7 +67,7 @@ export const HomeSection = ({ category, title }: Props) => {
           <GoArrowRight className={styles.arrowIcon}/>
         </Link>
       </header>
-       <Slider isFetching={isFetching} items={items as AreaOrRealmItem[]} />
+       <Slider isFetching={isFetching} items={itemsToRender as AreaOrRealmItem[]} />
     </section>
   );
 };
