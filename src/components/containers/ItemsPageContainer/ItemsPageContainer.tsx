@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
-import { Category } from '@/types/category';
-import { AreaOrRealmItem } from '@/types/areaOrRealmItem';
+import type { Category } from '@/types/category';
+import type { AreaOrRealmItem } from '@/types/areaOrRealmItem';
 import { AREAS } from '@/constants/areas';
 import { REALMS } from '@/constants/realms';
 import { useGetAreas } from '@/hooks/useGetAreas';

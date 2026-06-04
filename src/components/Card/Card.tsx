@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { CiLocationOn } from "react-icons/ci";
 import { PiCalendarMinusThin } from "react-icons/pi";
 
-import { AreaOrRealmItem } from '@/types/areaOrRealmItem';
+import type { AreaOrRealmItem } from '@/types/areaOrRealmItem';
 import { REALMS } from '@/constants/realms';
 import { decodeHtml } from '@/utils/decodeHtml';
 import { formatDate } from '@/utils/formatDate';

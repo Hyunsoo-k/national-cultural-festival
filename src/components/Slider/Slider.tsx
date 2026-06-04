@@ -1,5 +1,6 @@
   import { useRef } from 'react';
-  import { AreaOrRealmItem } from '@/types/areaOrRealmItem';
+  
+  import type { AreaOrRealmItem } from '@/types/areaOrRealmItem';
   import { Card } from '../Card/Card';
   import { CardSkeleton } from '@/components/skeletons/CardSkeleton/CardSkeleton';
   import { SliderControls } from './components/SliderControls/SliderControls';

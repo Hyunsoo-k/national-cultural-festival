@@ -1,6 +1,7 @@
-import { axiosInstance } from '@/axiosInstance/axiosInstance'
-import { Response } from '@/types/response';
 import { XMLParser } from 'fast-xml-parser';
+
+import type { Response } from '@/types/response';
+import { axiosInstance } from '@/axiosInstance/axiosInstance'
 
 export const getAreas = async (code: string, pageParma: undefined | string): Promise<Response<'area'>> => {
   const response = await axiosInstance.get('/area2', {

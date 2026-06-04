@@ -4,8 +4,10 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { GoArrowRight } from "react-icons/go";
 
-import { Category } from '@/types/category';
-import { AreaOrRealmItem } from '@/types/areaOrRealmItem';
+import type { Category } from '@/types/category';
+import type { AreaOrRealmItem } from '@/types/areaOrRealmItem';
+import type { AreaKey } from '@/types/areaKey';
+import type { RealmKey } from '@/types/realmKey';
 import { AREAS } from '@/constants/areas';
 import { REALMS } from '@/constants/realms';
 import { useGetAreas } from '@/hooks/useGetAreas';
@@ -15,8 +17,8 @@ import { Slider } from '@/components/Slider/Slider';
 
 import styles from './HomeSection.module.scss';
 
-const AREAS_VALUES = Object.keys(AREAS);
-const REALMS_VALUES = Object.keys(REALMS);
+const AREA_FILTERS = Object.keys(AREAS) as AreaKey[];
+const REALM_FILTERS = Object.keys(REALMS) as RealmKey[];
 
 type Props = {
   category: Category;
@@ -24,8 +26,10 @@ type Props = {
 };
 
 export const HomeSection = ({ category, title }: Props) => {
-  const [selectedFilter, setSelectedFilter] = useState<string>(
-    category === 'area' ? AREAS_VALUES[0] : REALMS_VALUES[0]
+  const isAreaCategory = category === 'area';
+
+  const [selectedFilter, setSelectedFilter] = useState<AreaKey | RealmKey>(
+    isAreaCategory ? AREA_FILTERS[0] : REALM_FILTERS[0]
   );
 
   const {
@@ -33,7 +37,7 @@ export const HomeSection = ({ category, title }: Props) => {
     isFetching: isAreasDataFetching
   } = useGetAreas(category, selectedFilter);
 
-  const realmCode = category === 'realm' ? REALMS[selectedFilter] ?? '' : '';
+  const realmCode = category === 'realm' ? (REALMS[selectedFilter as RealmKey] ?? '') : '';
 
   const {
     data: reamlsData,
@@ -49,7 +53,7 @@ export const HomeSection = ({ category, title }: Props) => {
   
   const filterItems = category === 'area' ? Object.keys(AREAS) : Object.keys(REALMS);
   
-  const handleFilterClick = (value: string) => {
+  const handleFilterClick = (value: AreaKey | RealmKey) => {
       setSelectedFilter(value);
   };
 

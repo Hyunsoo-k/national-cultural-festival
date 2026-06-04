@@ -1,7 +1,9 @@
+import type { Category } from '@/types/category';
+
 import styles from './SectionDivider.module.scss';
 
 type Props = {
-  label: 'area' | 'realm';
+  label: Category
 };
 
 export const SectionDivider = ({ label }: Props) => {

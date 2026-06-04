@@ -1,6 +1,7 @@
-import { axiosInstance } from '@/axiosInstance/axiosInstance'
-import { Response } from '@/types/response';
 import { XMLParser } from 'fast-xml-parser';
+
+import type { Response } from '@/types/response';
+import { axiosInstance } from '@/axiosInstance/axiosInstance'
 
 export const getRealms = async (code: string, pageParam: undefined | string): Promise<Response<'realm'>> => {
   const response = await axiosInstance.get('/realm2', {

@@ -1,6 +1,7 @@
-import { axiosInstance } from '@/axiosInstance/axiosInstance'
-import { Response } from '@/types/response';
 import { XMLParser } from 'fast-xml-parser';
+
+import type { Response } from '@/types/response';
+import { axiosInstance } from '@/axiosInstance/axiosInstance'
 
 export const getDetail = async (seq: string): Promise<Response<'detail'>> => {
   const response = await axiosInstance.get('/detail2', {

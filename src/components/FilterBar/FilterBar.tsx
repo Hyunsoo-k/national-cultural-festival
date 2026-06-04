@@ -1,11 +1,14 @@
 'use client';
 
+import type { AreaKey } from '@/types/areaKey';
+import type { RealmKey } from '@/types/realmKey';
+
 import styles from './FilterBar.module.scss';
 
 type Props = {
-  items: string[];
+  items: AreaKey[] | RealmKey[];
   selectedFilter: string | undefined;
-  onClick: (value: string) => void;
+  onClick: (value: AreaKey | RealmKey) => void;
 };
 
 export const FilterBar = ({ items, selectedFilter, onClick }: Props) => {
