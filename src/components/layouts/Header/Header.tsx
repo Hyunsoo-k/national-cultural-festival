@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { CiMenuBurger } from "react-icons/ci";
 
 import { useNavbarStore } from '@/stores/useNavbarStore';
@@ -22,7 +23,9 @@ export const Header = () => {
           <CiMenuBurger className={styles.burgerIcon} />
         </button>
       </div>
-      <Navbar />
+      <Suspense>
+        <Navbar />
+      </Suspense>
     </header>
   );
 };

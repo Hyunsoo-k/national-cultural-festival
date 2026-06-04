@@ -9,7 +9,7 @@ import { ItemsPageContainer } from '@/components/containers/ItemsPageContainer/I
 import styles from './page.module.scss';
 
 type Props = {
-  searchParams: Promise<{ category: 'area' | 'realm' }>;
+  searchParams: Promise<{ category?: 'area' | 'realm' }>;
 };
 
 export default async function ItemsPage({ searchParams }: Props) {
@@ -34,5 +34,5 @@ export default async function ItemsPage({ searchParams }: Props) {
         <ItemsPageContainer category={category || 'area'} />
       </HydrationBoundary>
     </main>
-  )
+  );
 };

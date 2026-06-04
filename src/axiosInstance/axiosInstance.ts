@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 export const axiosInstance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_END_POINT,
+  baseURL: process.env.END_POINT,
   params: {
-    serviceKey: process.env.NEXT_PUBLIC_SERVICE_KEY
+    serviceKey: process.env.SERVICE_KEY
   }
 });

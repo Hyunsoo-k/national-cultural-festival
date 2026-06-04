@@ -7,8 +7,8 @@ import { getAreas } from '@/services/getAreas'
 export const useGetAreas = (category: Category, code: string) => {
   return useInfiniteQuery({
     queryKey: QUERY_KEYS.areas(code),
-    queryFn: async ({ pageParam }: { pageParam: undefined | string }) => getAreas(code, pageParam),
-    initialPageParam: undefined,
+    queryFn: async ({ pageParam }: { pageParam: string }) => getAreas(code, pageParam),
+    initialPageParam: '1',
     getNextPageParam: (lastPage) => {
       const currentPage = parseInt(lastPage.body.PageNo, 10);
 

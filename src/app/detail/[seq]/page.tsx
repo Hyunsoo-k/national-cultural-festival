@@ -8,7 +8,7 @@ import styles from './page.module.scss';
 
 type Props = {
   params: Promise<{ seq: string }>;
-  searchParams: Promise<{ gpsX: string; gpsY: string, realm: string }>;
+  searchParams: Promise<{ gpsX?: string; gpsY?: string; realm?: string }>;
 };
 
 export default async function DetailPage({ params, searchParams }: Props) {
@@ -25,7 +25,12 @@ export default async function DetailPage({ params, searchParams }: Props) {
   return (
     <main className={styles.detailPage}>
       <HydrationBoundary state={dehydrate(queryClient)}>
-        <DetailPageContainer seq={seq} realm={realm} gpsX={gpsX} gpsY={gpsY}/>
+        <DetailPageContainer 
+          seq={seq} 
+          realm={realm || ''} 
+          gpsX={gpsX || ''} 
+          gpsY={gpsY || ''}
+        />
       </HydrationBoundary>
     </main>
   );
