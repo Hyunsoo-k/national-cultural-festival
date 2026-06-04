@@ -11,6 +11,7 @@ import { formatDate } from '@/utils/formatDate';
 import { decodeHtml } from '@/utils/decodeHtml';
 import { useGetDetail } from '@/hooks/useGetDetail';
 import { useGetRealms } from '@/hooks/useGetRealms';
+import { PageContainerSpinner } from '@/components/ui/PageContainerSpinner/PageContainerSpinner';
 import { ScreenPaddingWrapper } from '@/components/layouts/ScreenPaddingWrapper/ScreenPaddingWrapper';
 import { DetailHeroSection } from '@/components/sections/DetailHeroSection/DetailHeroSection';
 import { DetailSectionHeader } from './components/DetailSectionHeader/DetailSectionHeader';
@@ -27,15 +28,15 @@ type Props = {
 };
 
 export const DetailPageContainer = ({ seq, realm, gpsX, gpsY }: Props) => {
-  const { data: detailData } = useGetDetail(seq);
+  const { data: detailData, isFetching } = useGetDetail(seq);
 
   const {
     data: realmsData,
     isFetching: isFetchingRealms
   } = useGetRealms('realm', realm);
 
-  if (!detailData || !realmsData) {
-    return null;
+  if (!detailData || !realmsData || isFetching) {
+    return <PageContainerSpinner />;
   }
 
   const item = detailData.body.items.item;
@@ -92,9 +93,9 @@ export const DetailPageContainer = ({ seq, realm, gpsX, gpsY }: Props) => {
                     href={decodeHtml(item.url)}
                     target='_blank'
                     rel="noopener noreferrer"
-                    >
-                      {decodeHtml(item.url)}
-                    </Link>
+                  >
+                    {decodeHtml(item.url)}
+                  </Link>
                 </span>
               </li>
             </ul>
