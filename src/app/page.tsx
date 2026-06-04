@@ -12,12 +12,12 @@ export default async function Home() {
 
   await queryClient.prefetchQuery({
     queryKey: QUERY_KEYS.areas(),
-    queryFn: () => getAreas('전체', undefined),
+    queryFn: () => getAreas('전체', '1'),
   });
 
   await queryClient.prefetchQuery({
     queryKey: QUERY_KEYS.realms(),
-    queryFn: () => getRealms('F000', undefined),
+    queryFn: () => getRealms('F000', '1'),
   });
 
   return (
