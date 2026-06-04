@@ -60,7 +60,7 @@ export const HomeSection = ({ category, title }: Props) => {
   return (
     <section className={styles.homeSection}>
       <FilterBar
-        items={filterItems}
+        items={filterItems as AreaKey[] | RealmKey[]}
         selectedFilter={selectedFilter}
         onClick={handleFilterClick}
       />

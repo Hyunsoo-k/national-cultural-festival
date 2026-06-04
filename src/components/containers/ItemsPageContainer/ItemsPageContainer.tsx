@@ -55,7 +55,7 @@ export const ItemsPageContainer = ({ category }: Props) => {
     return arr.filter((i) => i?.title && i?.realmName);
   }) ?? [];
 
-  const filters: (AreaKey | RealmKey)[] = isAreaCategory ? AREA_FILTERS : REALM_FILTERS;
+  const filterItems: (AreaKey | RealmKey)[] = isAreaCategory ? AREA_FILTERS : REALM_FILTERS;
 
   useEffect(() => {
     const target = lastItemRef.current;
@@ -106,7 +106,7 @@ export const ItemsPageContainer = ({ category }: Props) => {
           </Link>
         </div>
         <FilterBar
-          items={filters}
+          items={filterItems as AreaKey[] | RealmKey[]}
           selectedFilter={selectedFilter}
           onClick={(value) => setSelectedFilter(value as AreaKey | RealmKey)}
         />
