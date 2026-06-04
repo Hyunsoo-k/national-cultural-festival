@@ -39,8 +39,6 @@ export const DetailPageContainer = ({ seq, realm, gpsX, gpsY }: Props) => {
   }
 
   const item = detailData.body.items.item;
-  console.log(detailData)
-  console.log(item)
 
   const realmItems = realmsData.pages.flatMap((page) => {
     const item = page.body.items.item;
