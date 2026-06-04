@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 
 import { QUERY_KEYS } from '@/constants/queryKeys';
@@ -32,15 +31,7 @@ export default async function ItemsPage({ searchParams }: Props) {
     <main className={styles.itemsPage}>
       <ItemsHeroSection />
       <HydrationBoundary state={dehydrate(queryClient)}>
-        <Suspense 
-          fallback={
-            <div className={styles.spinnerWrapper}>
-              로딩중
-            </div>
-          }
-        >
-          <ItemsPageContainer category={category || 'area'} />
-        </Suspense>
+        <ItemsPageContainer category={category || 'area'} />
       </HydrationBoundary>
     </main>
   );

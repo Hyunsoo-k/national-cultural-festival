@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 
 import { QUERY_KEYS } from '@/constants/queryKeys';
@@ -26,20 +25,12 @@ export default async function DetailPage({ params, searchParams }: Props) {
   return (
     <main className={styles.detailPage}>
       <HydrationBoundary state={dehydrate(queryClient)}>
-        <Suspense 
-          fallback={
-            <div className={styles.spinnerWrapper}>
-              로딩중
-            </div>
-          }
-        >
-          <DetailPageContainer 
-            seq={seq} 
-            realm={realm || ''} 
-            gpsX={gpsX || ''} 
-            gpsY={gpsY || ''}
-          />
-        </Suspense>
+        <DetailPageContainer 
+          seq={seq} 
+          realm={realm || ''} 
+          gpsX={gpsX || ''} 
+          gpsY={gpsY || ''}
+        />
       </HydrationBoundary>
     </main>
   );
