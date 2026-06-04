@@ -2,7 +2,7 @@ import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query
 
 import { QUERY_KEYS } from '@/constants/queryKeys';
 import { getDetail } from '@/services/getDetail';
-import { DetailPageContainer } from '@/containers/DetailPageContainer/DetailPageContainer';
+import { DetailPageContainer } from '@/components/containers/DetailPageContainer/DetailPageContainer';
 
 import styles from './page.module.scss';
 
