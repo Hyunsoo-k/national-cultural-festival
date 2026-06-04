@@ -24,7 +24,7 @@
             </li>
           ))}
           {!isFetching && items?.map((item: AreaOrRealmItem) => (
-            <li key={item.title} className={styles.item}>
+            <li key={item.seq} className={styles.item}>
               <Card item={item} />
             </li>
           ))}
