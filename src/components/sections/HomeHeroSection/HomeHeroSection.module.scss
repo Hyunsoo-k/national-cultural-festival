@@ -2,184 +2,119 @@
 
 .homeHeroSection {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: $screen-padding-mobile * 3 0;
+  background: #221a14;
+  overflow: hidden;
 
-  @include tablet {
-    flex-direction: row;
-    padding: $screen-padding-tablet * 4 0;
-  }
-
-  @include desktop {
-    max-width: $max-width;
-    margin: 0 auto;
-    padding: $screen-padding-desktop * 4 0;
-  }
-
-  &::before {
-    content: '2026';
+  &::after {
+    content: '문화';
     position: absolute;
-    z-index: 0;
-    top: $screen-padding-mobile;
-    right: $screen-padding-mobile;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 6rem;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30vw;
+    font-weight: 700;
     color: transparent;
-    -webkit-text-stroke: 1px $border-base;
+    -webkit-text-stroke: 1px rgba(201, 169, 122, 0.06);
     pointer-events: none;
-    white-space: nowrap;
+    font-family: serif;
+    line-height: 1;
+  }
+
+  .inner {
+    position: relative;
+    z-index: 1;
+    padding: 2rem 0;
 
     @include tablet {
-      left: 50%;
-      top: $screen-padding-tablet;
-      transform: translateX(-50%);
-      font-size: 10rem;
+      padding: 5rem 0;
     }
 
     @include desktop {
-      top: $screen-padding-desktop;
+      padding: 8rem 0;
     }
   }
 
-  .textArea {
-    position: relative;
-    z-index: 1;
+  .eyeBrow {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    font-size: 0.7rem;
+    color: $text-invers-on-bg-secondary;
+    letter-spacing: 1.5px;
 
-    .eyeBrow {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-      font-size: 0.7rem;
-      color: $text-active;
-      letter-spacing: 1.5px;
-
-      @include tablet {
-        margin-bottom: 2rem;
-        font-size: 0.9rem;
-      }
-
-      &::before {
-        content: '';
-        flex-shrink: 0;
-        width: 2.5rem;
-        height: 1px;
-        background-color: $bg-active;
-
-        @include tablet {
-          width: 4rem;
-        }
-      }
-    }
-
-    .title {
-      margin-bottom: 0.5rem;
-      font-size: 2.5rem;
-      font-weight: 500;
-      font-family: var(--font-noto-serif-kr), sans-serif;
-      line-height: 1.2;
-
-      @include tablet {
-        margin-bottom: 1rem;
-        font-size: 3.5rem;
-        font-weight: 600;
-        line-height: 1.3;
-      }
-    }
-
-    .subTitle {
-      margin-bottom: 1.5rem;
-      font-family: var(--font-dm-serif-display), sans-serif;
-      font-style: italic;
-      color: $text-secondary;
-
-      @include tablet {
-        margin-bottom: 2.5rem;
-        font-size: 1.3rem;
-      }
-    }
-
-    .description {
-      margin-bottom: 2rem;
-      font-size: 0.8rem;
-      font-weight: 300;
-      color: $text-secondary;
-      letter-spacing: 0.5px;
-
-      @include tablet {
-        margin-bottom: 3rem;
-        font-size: 0.9rem;
-      }
-    }
-
-    .viewMoreLink {
-      display: flex;
-      align-items: center;
-      margin-top: auto;
-      text-align: start;
-      font-family: var(--font-noto-serif-kr), sans-serif;
-      font-size: 1rem;
-      font-weight: 500;
-      color: $text-active;
-
-      @include tablet {
-        font-size: 1.5rem;
-      }
-
-      .arrowIcon {
-        position: relative;
-        top: 0.1rem;
-        margin-left: 0.5rem;
-        font-size: 1rem;
-
-        @include tablet {
-          margin-left: 1.5rem;
-          font-size: 1.5rem;
-        }
-      }
+    &::before {
+      content: '';
+      width: 2.5rem;
+      height: 1px;
+      background: $text-invers-on-bg-secondary;
+      flex-shrink: 0;
     }
   }
 
-  .imgArea {
+  .main {
+    margin-bottom: 3rem;
+  }
+
+  .title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 500;
+    font-family: var(--font-noto-serif-kr), serif;
+    color: $text-invers;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  .subTitle {
+    font-family: var(--font-dm-serif-display), serif;
+    font-style: italic;
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    color: $text-invers-on-bg-secondary;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(201, 169, 122, 0.1);
+    margin-bottom: 2.5rem;
+  }
+
+  .bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .description {
     display: none;
 
     @include tablet {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex: 1;
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: $text-invers-on-bg-secondary;
+      line-height: 1.9;
+      letter-spacing: 0.5px;
     }
-    
-    .imgWrapper {
-      position: relative;
-      z-index: 1;
-      width: 90%;
-      height: 100%;
-      margin-left: auto;
-      border-radius: $radius;
+  }
 
-      @include tablet {
-        width: 20 rem;
-      }
+  .viewMoreLink {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-noto-serif-kr), serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: $text-invers-on-bg-secondary;
+    white-space: nowrap;
 
-      @include desktop {
-        width: 30rem;
-      }
+    @include desktop {
+      font-size: 1.3rem;
+    }
 
-      .subImg {
-        position: absolute;
-        left: -2rem;
-        bottom: -3rem;
-        z-index: 2;
-        width: 12rem;
-        height: 14rem;
-        padding: 1px;
-        background-color: $bg-base;
-      }
+    .icon {
+      
     }
   }
 }

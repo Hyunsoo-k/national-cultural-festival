@@ -23,12 +23,12 @@ export const Card = ({ item }: Props) => {
       className={styles.card}
     >
       <div className={styles.thumbnailWrapper}>
-        <Image src={item.thumbnail} alt={item.title} fill />
+        <Image src={item.thumbnail} alt={item.title || ''} fill className={styles.thumbnail} />
       </div>
       <div className={styles.info}>
-        <span className={styles.realmName}>{item.realmName}</span>
+        <span className={styles.realmName}>{item.realmName || ''}</span>
         <h3 className={styles.title}>
-          {decodeHtml(item.title)}
+          {decodeHtml(item.title || '')}
         </h3>
         <span className={styles.area}>
           <CiLocationOn className={styles.icon} />{item.area} {item.sigungu}

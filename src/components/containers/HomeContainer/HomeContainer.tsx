@@ -10,12 +10,12 @@ export const HomeContainer = () => {
     <div className={styles.homeContainer}>
       <HomeHeroSection />
       <ScreenPaddingWrapper>
-        <SectionDivider label='AREA' />
+        <SectionDivider label='area' />
         <HomeSection
           category='area'
           title='지역별 축제'
         />
-        <SectionDivider label='REALM' />
+        <SectionDivider label='realm' />
         <HomeSection
           category='realm'
           title='분야별 축제'

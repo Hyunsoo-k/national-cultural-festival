@@ -9,6 +9,13 @@
 
   @include tablet {
     gap: 1.3rem;
+
+    &:hover {
+      .thumbnail {
+        transition: transform 0.3s ease-in-out;
+        transform: scale(1.1);
+      }
+    }
   }
 
   .thumbnailWrapper {
@@ -17,6 +24,7 @@
     height: 15rem;
 
     @include tablet {
+      overflow: hidden;
       height: 22rem;
     }
   }

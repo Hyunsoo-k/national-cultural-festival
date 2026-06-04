@@ -1,0 +1,10 @@
+@use '@/styles/variables' as *;
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: $backdrop-zindex;
+  width: 100%;
+  height: 100dvh;
+  background-color: rgba($color: $bg-secondary, $alpha: 0.3);
+}

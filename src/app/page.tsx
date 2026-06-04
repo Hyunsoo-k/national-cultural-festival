@@ -3,7 +3,7 @@ import { QueryClient, dehydrate, HydrationBoundary } from '@tanstack/react-query
 import { QUERY_KEYS } from '@/constants/queryKeys';
 import { getAreas } from '@/services/getAreas';
 import { getRealms } from '@/services/getRealms';
-import { HomeContainer } from '@/containers/HomeContainer/HomeContainer';
+import { HomeContainer } from '@/components/containers/HomeContainer/HomeContainer';
 
 import styles from './page.module.scss';
 
@@ -12,12 +12,12 @@ export default async function Home() {
 
   await queryClient.prefetchQuery({
     queryKey: QUERY_KEYS.areas(),
-    queryFn: () => getAreas('전체'),
+    queryFn: () => getAreas('전체', undefined),
   });
 
   await queryClient.prefetchQuery({
     queryKey: QUERY_KEYS.realms(),
-    queryFn: () => getRealms('F000'),
+    queryFn: () => getRealms('F000', undefined),
   });
 
   return (

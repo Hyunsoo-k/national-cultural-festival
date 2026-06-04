@@ -11,13 +11,13 @@ import { formatDate } from '@/utils/formatDate';
 import { decodeHtml } from '@/utils/decodeHtml';
 import { useGetDetail } from '@/hooks/useGetDetail';
 import { useGetRealms } from '@/hooks/useGetRealms';
+import { ScreenPaddingWrapper } from '@/components/layouts/ScreenPaddingWrapper/ScreenPaddingWrapper';
 import { DetailHeroSection } from '@/components/sections/DetailHeroSection/DetailHeroSection';
 import { DetailSectionHeader } from './components/DetailSectionHeader/DetailSectionHeader';
 import { KakaoMap } from './components/KakaoMap/KakaoMap';
 import { Slider } from '@/components/Slider/Slider';
 
 import styles from './DetailPageContainer.module.scss';
-import { ScreenPaddingWrapper } from '@/components/layouts/ScreenPaddingWrapper/ScreenPaddingWrapper';
 
 type Props = {
   seq: string;
@@ -27,18 +27,26 @@ type Props = {
 };
 
 export const DetailPageContainer = ({ seq, realm, gpsX, gpsY }: Props) => {
-  const { data: detailQuery } = useGetDetail(seq);
+  const { data: detailData } = useGetDetail(seq);
 
   const {
-    data: realmsQuery,
+    data: realmsData,
     isFetching: isFetchingRealms
   } = useGetRealms('realm', realm);
 
-  if (!detailQuery || !realmsQuery) {
+  if (!detailData || !realmsData) {
     return null;
   }
 
-  const item = detailQuery.body.items.item;
+  const item = detailData.body.items.item;
+  console.log(detailData)
+  console.log(item)
+
+  const realmItems = realmsData.pages.flatMap((page) => {
+    const item = page.body.items.item;
+    const arr = Array.isArray(item) ? item : [item];
+    return arr.filter((i) => i?.title && i?.realmName);
+  });
 
   return (
     <div className={styles.detailPageContainer}>
@@ -102,7 +110,7 @@ export const DetailPageContainer = ({ seq, realm, gpsX, gpsY }: Props) => {
         </section>
         <section className={styles.section}>
           <DetailSectionHeader label='OTHERS' title='같은 분야의 행사' />
-          <Slider isFetching={isFetchingRealms} items={realmsQuery.body.items.item} />
+          <Slider isFetching={isFetchingRealms} items={realmItems} />
         </section>
       </ScreenPaddingWrapper>
     </div>

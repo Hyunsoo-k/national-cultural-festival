@@ -4,7 +4,7 @@ import { QUERY_KEYS } from '@/constants/queryKeys';
 import { getAreas } from '@/services/getAreas';
 import { getRealms } from '@/services/getRealms';
 import { ItemsHeroSection } from '@/components/sections/ItemsHeroSection/ItemsHeroSection';
-import { ItemsPageContainer } from '@/containers/ItemsPageContainer/ItemsPageContainer';
+import { ItemsPageContainer } from '@/components/containers/ItemsPageContainer/ItemsPageContainer';
 
 import styles from './page.module.scss';
 
@@ -19,19 +19,19 @@ export default async function ItemsPage({ searchParams }: Props) {
 
   await queryClient.prefetchQuery({
     queryKey: QUERY_KEYS.areas(),
-    queryFn: () => getAreas('전체'),
+    queryFn: () => getAreas('전체', undefined),
   });
 
   await queryClient.prefetchQuery({
     queryKey: QUERY_KEYS.realms(),
-    queryFn: () => getRealms('F000'),
+    queryFn: () => getRealms('F000', undefined),
   });
 
   return (
     <main className={styles.itemsPage}>
       <ItemsHeroSection />
       <HydrationBoundary state={dehydrate(queryClient)}>
-        <ItemsPageContainer category={category} />
+        <ItemsPageContainer category={category || 'area'} />
       </HydrationBoundary>
     </main>
   )

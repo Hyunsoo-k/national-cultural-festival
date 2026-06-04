@@ -1,29 +1,13 @@
 "use client";
 
-import { useEffect } from 'react';
-import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
+import Link from 'next/link';
+import { useEffect } from 'react';
 
-import { Category } from '@/types/category';
 import { useNavbarStore } from '@/stores/useNavbarStore';
+import { ScreenPaddingWrapper } from '@/components/layouts/ScreenPaddingWrapper/ScreenPaddingWrapper';
 
 import styles from './Navbar.module.scss';
-
-type NavItem = {
-  category: Category;
-  name: '지역별' | '기간별';
-};
-
-const NAV_ITEMS: NavItem[] = [
-  {
-    category: 'area',
-    name: "지역별",
-  },
-  {
-    category: 'period',
-    name: '기간별'
-  }
-];
 
 export const Navbar = () => {
   const { isOpen, close } = useNavbarStore();
@@ -36,13 +20,17 @@ export const Navbar = () => {
 
   return (
     <nav className={`${styles.navbar} ${isOpen ? styles.open : styles.close}`}>
-      <ul className={styles.list}>
-        {NAV_ITEMS.map((item: NavItem) => (
-          <li key={item.category} className={styles.item}>
-            <Link href={`/${item.category}`}>{item.name}</Link>
-          </li>
-        ))}
-      </ul>
+      <ScreenPaddingWrapper>
+        <div className={styles.inner}>
+          <Link href={`/items`} className={styles.link}>
+            지역, 분야별 문화축제
+          </Link>
+          /
+          <Link href={`/`} className={styles.link}>
+            문화축제 캘린더
+          </Link>
+        </div>
+      </ScreenPaddingWrapper>
     </nav>
   );
 };
