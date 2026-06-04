@@ -12,7 +12,7 @@ import { useGetRealms } from '@/hooks/useGetRealms';
 import { ScreenPaddingWrapper } from '@/components/layouts/ScreenPaddingWrapper/ScreenPaddingWrapper';
 import { SectionDivider } from '@/components/ui/SectionDivider/SectionDivider';
 import { FilterBar } from '@/components/FilterBar/FilterBar';
-import { CardSkeleton } from '@/skeletons/CardSkeleton/CardSkeleton';
+import { CardSkeleton } from '@/components/skeletons/CardSkeleton/CardSkeleton';
 import { Card } from '@/components/Card/Card';
 
 import styles from './ItemsPageContainer.module.scss';
