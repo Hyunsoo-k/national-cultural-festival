@@ -37,7 +37,6 @@ export const ItemsPageContainer = ({ category }: Props) => {
   const lastItemRef = useRef<HTMLLIElement | null>(null);
 
   const areasQuery = useGetAreas(category, selectedFilter);
-
   const realmCode = !isAreaCategory ? (REALMS[selectedFilter as RealmKey] ?? '') : '';
   const realmsQuery = useGetRealms(category, realmCode);
 
@@ -51,18 +50,12 @@ export const ItemsPageContainer = ({ category }: Props) => {
   const items = data?.pages.flatMap((page) => {
     const item = page.body.items.item;
     const arr = Array.isArray(item) ? item : [item];
-    
     return arr.filter((i) => i?.title && i?.realmName);
   }) ?? [];
 
-  const filterItems: (AreaKey | RealmKey)[] = isAreaCategory ? AREA_FILTERS : REALM_FILTERS;
-
   useEffect(() => {
     const target = lastItemRef.current;
-
-    if (!target) {
-      return;
-    }
+    if (!target) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -74,10 +67,7 @@ export const ItemsPageContainer = ({ category }: Props) => {
     );
 
     observer.observe(target);
-
-    return () => {
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, [hasNextPage, fetchNextPage, isFetching]);
 
   const handleCategoryClick = (nextCategory: Category) => {
@@ -105,11 +95,20 @@ export const ItemsPageContainer = ({ category }: Props) => {
             분야별
           </Link>
         </div>
-        <FilterBar
-          items={filterItems as AreaKey[] | RealmKey[]}
-          selectedFilter={selectedFilter}
-          onClick={(value) => setSelectedFilter(value as AreaKey | RealmKey)}
-        />
+        {isAreaCategory ? (
+          <FilterBar
+            items={AREA_FILTERS}
+            selectedFilter={selectedFilter as AreaKey}
+            onClick={(value) => setSelectedFilter(value as AreaKey)}
+          />
+        ) : (
+          <FilterBar
+            items={REALM_FILTERS}
+            selectedFilter={selectedFilter as RealmKey}
+            onClick={(value) => setSelectedFilter(value as RealmKey)}
+          />
+        )}
+
         <SectionDivider label={category} />
         <ul className={styles.list}>
           {items.map((item: AreaOrRealmItem, idx) => (
@@ -123,10 +122,7 @@ export const ItemsPageContainer = ({ category }: Props) => {
           ))}
           {isFetching && hasNextPage &&
             Array.from({ length: 12 }).map((_, idx) => (
-              <li
-                key={`skeleton-${idx}`}
-                className={styles.item}
-                >
+              <li key={`skeleton-${idx}`} className={styles.item}>
                 <CardSkeleton />
               </li>
             ))}

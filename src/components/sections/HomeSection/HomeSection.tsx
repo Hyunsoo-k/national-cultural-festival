@@ -51,19 +51,26 @@ export const HomeSection = ({ category, title }: Props) => {
 
   const itemsToRender = category === 'area' ? areaItems : realmItems;
   
-  const filterItems = category === 'area' ? AREA_FILTERS : REALM_FILTERS;
-  
   const handleFilterClick = (value: AreaKey | RealmKey) => {
       setSelectedFilter(value);
   };
 
   return (
     <section className={styles.homeSection}>
-      <FilterBar
-        items={filterItems as AreaKey[] | RealmKey[]}
-        selectedFilter={selectedFilter}
-        onClick={handleFilterClick}
-      />
+      {isAreaCategory ? (
+        <FilterBar
+          items={AREA_FILTERS}
+          selectedFilter={selectedFilter as AreaKey}
+          onClick={handleFilterClick}
+        />
+      ) : (
+        <FilterBar
+          items={REALM_FILTERS}
+          selectedFilter={selectedFilter as RealmKey}
+          onClick={handleFilterClick}
+        />
+      )}
+
       <header className={styles.header}>
         <h2 className={styles.title}>{title}</h2>
         <Link href={`/items?category=${category}`} className={styles.viewMoreBtn}>
@@ -71,7 +78,7 @@ export const HomeSection = ({ category, title }: Props) => {
           <GoArrowRight className={styles.arrowIcon}/>
         </Link>
       </header>
-       <Slider isFetching={isFetching} items={itemsToRender as AreaOrRealmItem[]} />
+      <Slider isFetching={isFetching} items={itemsToRender as AreaOrRealmItem[]} />
     </section>
   );
 };
