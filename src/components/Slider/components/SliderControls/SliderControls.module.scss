@@ -1,0 +1,33 @@
+@use '@/styles/variables' as *;
+
+.sliderControls {
+  display: none;
+
+  @include tablet {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% + #{$screen-padding-tablet});
+    margin: 0 auto;
+    transform: translate(-#{$screen-padding-tablet / 2}, -50%);
+
+    .btn {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+
+      .icon {
+        color: $text-secondary;
+        font-size: 3rem;
+      }
+    }
+  }
+
+  @include desktop {
+    width: calc(100% + #{$screen-padding-desktop});
+    transform: translate(-#{$screen-padding-desktop / 2}, -50%);
+  }
+}

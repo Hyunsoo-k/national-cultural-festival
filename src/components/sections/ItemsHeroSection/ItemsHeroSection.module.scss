@@ -1,0 +1,65 @@
+@use '@/styles/variables' as *;
+
+.itemsHeroSection {
+  height: 15rem;
+  background-color: #1A2E1A;
+
+  @include tablet {
+    height: 20rem;
+  }
+
+  @include desktop {
+    height: 25rem;
+  }
+
+  .inner {
+    padding: 4.5rem 0;
+
+    @include tablet {
+      padding: 6rem 0;
+    }
+
+    @include desktop {
+      max-width: $max-width;
+      margin: 0 auto;
+      padding: 7.5rem 0;
+    }
+
+    .header {
+      color: $text-invers;
+
+      .title {
+        margin-bottom: 0.5rem;
+        font-family: var(--font-noto-serif-kr), sans-serif;
+        font-weight: 600;
+
+        @include tablet {
+          margin-bottom: 1.5rem;
+          font-size: 2rem;
+        }
+
+        @include desktop {
+          margin-bottom: 2rem;
+          font-size: 2.5rem;
+        }
+
+        .strong {
+          color: $text-active;
+        }
+      }
+
+      .description {
+        font-size: 0.8rem;
+        color: $text-invers-secondary-on-bg-secondary;
+
+        @include tablet {
+          font-size: 0.9rem;
+        }
+
+        @include desktop {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

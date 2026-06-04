@@ -1,0 +1,36 @@
+@use '@/styles/variables' as *;
+
+.slider {
+  overflow-x: auto;
+  position: relative;
+  width: 100%;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include tablet {
+    overflow-x: visible;
+  }
+
+  @include desktop {
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+
+  .track {
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.3s ease-in-out;
+
+    .item {
+      flex-shrink: 0;
+      width: 15rem;
+
+      @include tablet {
+        width: 18rem;
+      }
+    }
+  }
+}

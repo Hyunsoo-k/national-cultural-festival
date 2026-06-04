@@ -1,0 +1,13 @@
+@use '@/styles/variables' as *;
+
+.detailPage {
+  min-height: calc(100dvh - #{$header-height-mobile});
+
+  @include tablet {
+    min-height: calc(100dvh - #{$header-height-tablet});
+  }
+
+  @include desktop {
+    min-height: calc(100dvh - #{$header-height-desktop});
+  }
+}
