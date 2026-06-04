@@ -3,7 +3,7 @@ import { RealmName } from './realmName';
 export interface AreaOrRealmItem {
   serviceName: string;
   seq: string;
-  title: string;
+  title: string | undefined;
   startDate: number;
   endDate: number;
   place: string;
