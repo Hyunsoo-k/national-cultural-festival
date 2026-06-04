@@ -8,7 +8,7 @@ import styles from './FilterBar.module.scss';
 type Props = {
   items: AreaKey[] | RealmKey[];
   selectedFilter: string | undefined;
-  onClick: (value: AreaKey | RealmKey) => void;
+  onClick: (filterItem: AreaKey | RealmKey) => void;
 };
 
 export const FilterBar = ({ items, selectedFilter, onClick }: Props) => {
