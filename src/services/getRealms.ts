@@ -2,9 +2,13 @@ import { axiosInstance } from '@/axiosInstance/axiosInstance'
 import { Response } from '@/types/response';
 import { XMLParser } from 'fast-xml-parser';
 
-export const getRealms = async (code: string): Promise<Response<'realm'>> => {
+export const getRealms = async (code: string, pageParam: undefined | string): Promise<Response<'realm'>> => {
   const response = await axiosInstance.get('/realm2', {
-    params: { realmCode: code }
+    params: {
+      realmCode: code,
+      PageNo: pageParam,
+      numOfrows: '12'
+    }
   });
 
   const data = response.data;
