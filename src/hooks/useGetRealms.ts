@@ -7,8 +7,8 @@ import { getRealms } from '@/services/getRealms';
 export const useGetRealms = (category: Category, code: string) => {
   return useInfiniteQuery({
     queryKey: QUERY_KEYS.realms(code),
-    queryFn: async ({ pageParam }: { pageParam: undefined | string }) => getRealms(code, pageParam),
-    initialPageParam: undefined,
+    queryFn: async ({ pageParam }: { pageParam: string }) => getRealms(code, pageParam),
+    initialPageParam: '1',
     getNextPageParam: (lastPage) => {
       const currentPage = parseInt(lastPage.body.PageNo, 10);
 

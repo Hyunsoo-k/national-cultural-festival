@@ -1,10 +1,9 @@
-import { XMLParser } from 'fast-xml-parser';
+import axios from 'axios';
 
 import type { Response } from '@/types/response';
-import { axiosInstance } from '@/axiosInstance/axiosInstance'
 
-export const getAreas = async (code: string, pageParma: undefined | string): Promise<Response<'area'>> => {
-  const response = await axiosInstance.get('/area2', {
+export const getAreas = async (code: string, pageParma: string): Promise<Response<'area'>> => {
+  const response = await axios.get('/api/area2', {
     params: {
       sido: code === '전체' ? undefined : code,
       PageNo: pageParma,
@@ -12,14 +11,5 @@ export const getAreas = async (code: string, pageParma: undefined | string): Pro
     }
   });
 
-  const data = response.data;
-
-  const parser = new XMLParser({
-    ignoreAttributes: false,
-    parseTagValue: true,
-  });
-  
-  const jsonData = parser.parse(data);
-
-  return jsonData.response;
+  return response.data.response;
 };

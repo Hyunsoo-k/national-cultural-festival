@@ -1,10 +1,9 @@
-import { XMLParser } from 'fast-xml-parser';
+import axios from 'axios';
 
 import type { Response } from '@/types/response';
-import { axiosInstance } from '@/axiosInstance/axiosInstance'
 
-export const getRealms = async (code: string, pageParam: undefined | string): Promise<Response<'realm'>> => {
-  const response = await axiosInstance.get('/realm2', {
+export const getRealms = async (code: string, pageParam: string): Promise<Response<'realm'>> => {
+  const response = await axios.get('/api/realm2', {
     params: {
       realmCode: code,
       PageNo: pageParam,
@@ -12,14 +11,5 @@ export const getRealms = async (code: string, pageParam: undefined | string): Pr
     }
   });
 
-  const data = response.data;
-
-  const parser = new XMLParser({
-    ignoreAttributes: false,
-    parseTagValue: true,
-  });
-  
-  const jsonData = parser.parse(data);
-
-  return jsonData.response
+  return response.data.response;
 };
