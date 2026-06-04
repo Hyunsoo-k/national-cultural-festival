@@ -40,14 +40,14 @@
     gap: 1rem;
     margin-bottom: 3rem;
     font-size: 0.7rem;
-    color: $text-invers-on-bg-secondary;
+    color: $text-inverse-on-bg-secondary;
     letter-spacing: 1.5px;
 
     &::before {
       content: '';
       width: 2.5rem;
       height: 1px;
-      background: $text-invers-on-bg-secondary;
+      background: $text-inverse-on-bg-secondary;
       flex-shrink: 0;
     }
   }
@@ -69,7 +69,7 @@
     font-family: var(--font-dm-serif-display), serif;
     font-style: italic;
     font-size: clamp(1rem, 1.5vw, 1.3rem);
-    color: $text-invers-on-bg-secondary;
+    color: $text-inverse-on-bg-secondary;
   }
 
   .divider {
@@ -93,7 +93,7 @@
       display: block;
       font-size: 0.8rem;
       font-weight: 300;
-      color: $text-invers-on-bg-secondary;
+      color: $text-inverse-on-bg-secondary;
       line-height: 1.9;
       letter-spacing: 0.5px;
     }
@@ -106,7 +106,7 @@
     font-family: var(--font-noto-serif-kr), serif;
     font-size: 1rem;
     font-weight: 500;
-    color: $text-invers-on-bg-secondary;
+    color: $text-inverse-on-bg-secondary;
     white-space: nowrap;
 
     @include desktop {

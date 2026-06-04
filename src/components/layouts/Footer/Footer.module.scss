@@ -40,7 +40,7 @@
       
       .eyebrow {
         font-size: 0.7rem;
-        color: $text-invers-secondary-on-bg-secondary;
+        color: $text-inverse-secondary-on-bg-secondary;
 
         @include tablet {
           font-size: 0.9rem;
@@ -51,7 +51,7 @@
         font-family: var(--font-noto-serif-kr), sans-serif;
         font-size: 1.1rem;
         font-weight: 400;
-        color: $text-invers-on-bg-secondary;
+        color: $text-inverse-on-bg-secondary;
 
         @include tablet {
           font-size: 1.5rem;
@@ -60,7 +60,7 @@
 
       .description {
         font-size: 0.7rem;
-        color: $text-invers-thirdly-on-bg-secondary;
+        color: $text-inverse-thirdly-on-bg-secondary;
 
         @include tablet {
           font-size: 0.8rem;
@@ -78,7 +78,7 @@
           font-family: var(--font-dm-serif-display), sans-serif;
           font-style: italic;
           font-size: 1.3rem;
-          color: $text-invers-secondary-on-bg-secondary;
+          color: $text-inverse-secondary-on-bg-secondary;
           letter-spacing: 1px;
         }
       }
@@ -93,7 +93,7 @@
       .copyright, .dataSource {
         font-size: 0.7rem;
         font-weight: 300;
-        color: $text-invers-thirdly-on-bg-secondary;
+        color: $text-inverse-thirdly-on-bg-secondary;
 
         @include tablet {
           font-size: 0.8rem;

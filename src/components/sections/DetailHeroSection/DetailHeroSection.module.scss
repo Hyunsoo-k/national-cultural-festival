@@ -80,9 +80,9 @@
     
     .realmName {
       padding: 0.15rem 0.4rem;
-      border: 1px solid $text-invers-on-bg-secondary;
+      border: 1px solid $text-inverse-on-bg-secondary;
       font-size: 0.8rem;
-      color: $text-invers-on-bg-secondary;
+      color: $text-inverse-on-bg-secondary;
 
       @include tablet {
         font-size: 0.8rem;
@@ -94,7 +94,7 @@
       font-family: var(--font-noto-serif-kr), sans-serif;
       font-size: 2rem;
       font-weight: 600;
-      color: $text-invers-on-bg-secondary;
+      color: $text-inverse-on-bg-secondary;
 
       @include tablet {
         font-size: 3rem;
