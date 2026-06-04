@@ -22,11 +22,11 @@ export const Navbar = () => {
     <nav className={`${styles.navbar} ${isOpen ? styles.open : styles.close}`}>
       <ScreenPaddingWrapper>
         <div className={styles.inner}>
-          <Link href={`/items?categry=area`} className={styles.link}>
+          <Link href={`/items?category=area`} className={styles.link}>
             지역별 문화∙축제
           </Link>
           <div className={styles.boundary}>/</div>
-          <Link href={`/items?categry=realm`} className={styles.link}>
+          <Link href={`/items?category=realm`} className={styles.link}>
             분야별 문화∙축제
           </Link>
         </div>
