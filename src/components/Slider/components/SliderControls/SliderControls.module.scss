@@ -28,6 +28,6 @@
 
   @include desktop {
     width: calc(100% + #{$screen-padding-desktop});
-    transform: translate(-#{$screen-padding-desktop / 2}, -50%);
+    transform: translate(calc($screen-padding-desktop / -2), -50%);
   }
 }
