@@ -2,7 +2,7 @@ import { AreaOrRealmItem } from './areaOrRealmItem';
 import { DetailItem } from './detailItem';
 import { Category } from './category';
 
-export interface Response<T extends Category> {
+export interface Response<T extends Category | 'detail'> {
   header: {
     resultCode: string;
     resultMsg: string;

@@ -26,7 +26,7 @@
     }
 
     .header {
-      color: $text-invers;
+      color: $text-inverse;
 
       .title {
         margin-bottom: 0.5rem;
@@ -50,7 +50,7 @@
 
       .description {
         font-size: 0.8rem;
-        color: $text-invers-secondary-on-bg-secondary;
+        color: $text-inverse-secondary-on-bg-secondary;
 
         @include tablet {
           font-size: 0.9rem;

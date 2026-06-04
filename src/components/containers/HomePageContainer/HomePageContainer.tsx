@@ -3,11 +3,11 @@ import { HomeHeroSection } from '@/components/sections/HomeHeroSection/HomeHeroS
 import { SectionDivider } from '@/components/ui/SectionDivider/SectionDivider';
 import { HomeSection } from '@/components/sections/HomeSection/HomeSection';
 
-import styles from './HomeContainer.module.scss';
+import styles from './HomePageContainer.module.scss';
 
-export const HomeContainer = () => {
+export const HomePageContainer = () => {
   return (
-    <div className={styles.homeContainer}>
+    <div className={styles.homePageContainer}>
       <HomeHeroSection />
       <ScreenPaddingWrapper>
         <SectionDivider label='area' />

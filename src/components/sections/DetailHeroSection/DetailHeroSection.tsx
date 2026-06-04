@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 
-import { DetailItem } from '@/types/detailItem';
+import type { DetailItem } from '@/types/detailItem';
 import { decodeHtml } from '@/utils/decodeHtml';
 import { ScreenPaddingWrapper } from '@/components/layouts/ScreenPaddingWrapper/ScreenPaddingWrapper';
 

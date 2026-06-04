@@ -3,7 +3,7 @@ import { QueryClient, dehydrate, HydrationBoundary } from '@tanstack/react-query
 import { QUERY_KEYS } from '@/constants/queryKeys';
 import { getAreas } from '@/services/getAreas';
 import { getRealms } from '@/services/getRealms';
-import { HomeContainer } from '@/components/containers/HomeContainer/HomeContainer';
+import { HomePageContainer } from '@/components/containers/HomePageContainer/HomePageContainer';
 
 import styles from './page.module.scss';
 
@@ -23,7 +23,7 @@ export default async function Home() {
   return (
     <main className={styles.page}>
       <HydrationBoundary state={dehydrate(queryClient)}>
-        <HomeContainer />
+        <HomePageContainer />
       </HydrationBoundary>
     </main>
   );
