@@ -1,0 +1,21 @@
+@use '@/styles/variables' as *;
+
+.pageContainerSpinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100dvh - #{$header-height-mobile});
+
+  @include tablet {
+    min-height: calc(100dvh - #{$header-height-tablet});
+  }
+
+  @include desktop {
+    min-height: calc(100dvh - #{$header-height-desktop});
+  }
+
+  .spinnerIcon {
+    width: 60% !important;
+    max-width: 20rem !important;
+  }
+}
