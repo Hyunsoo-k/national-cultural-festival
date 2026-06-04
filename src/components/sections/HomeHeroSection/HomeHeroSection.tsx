@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { TfiArrowCircleDown } from "react-icons/tfi";
 
@@ -6,6 +8,15 @@ import { ScreenPaddingWrapper } from '@/components/layouts/ScreenPaddingWrapper/
 import styles from './HomeHeroSection.module.scss';
 
 export const HomeHeroSection = () => {
+  const handleScrollToArea = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const targetElement = document.getElementById('area');
+    
+    if (targetElement) {
+      e.preventDefault();
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className={styles.homeHeroSection}>
       <ScreenPaddingWrapper>
@@ -26,7 +37,7 @@ export const HomeHeroSection = () => {
               전국 각지에서 펼쳐지는 다채로운 문화예술 축제를<br />
               지역별, 기간별로 한눈에 확인해 보세요.
             </p>
-            <Link href='/#area' className={styles.viewMoreLink}>
+            <Link href='/#area' onClick={handleScrollToArea} className={styles.viewMoreLink}>
               둘러보기
               <TfiArrowCircleDown className={styles.icon} />
             </Link>

@@ -56,7 +56,7 @@ export const HomeSection = ({ category, title }: Props) => {
   };
 
   return (
-    <section className={styles.homeSection}>
+    <section id={category} className={styles.homeSection}>
       {isAreaCategory ? (
         <FilterBar
           items={AREA_FILTERS}
