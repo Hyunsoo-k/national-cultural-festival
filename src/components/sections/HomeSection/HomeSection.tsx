@@ -51,7 +51,7 @@ export const HomeSection = ({ category, title }: Props) => {
 
   const itemsToRender = category === 'area' ? areaItems : realmItems;
   
-  const filterItems = category === 'area' ? Object.keys(AREAS) : Object.keys(REALMS);
+  const filterItems = category === 'area' ? AREA_FILTERS : REALM_FILTERS;
   
   const handleFilterClick = (value: AreaKey | RealmKey) => {
       setSelectedFilter(value);
