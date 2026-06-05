@@ -14,6 +14,7 @@ import { SectionDivider } from '@/components/ui/SectionDivider/SectionDivider';
 import { FilterBar } from '@/components/FilterBar/FilterBar';
 import { CardSkeleton } from '@/components/skeletons/CardSkeleton/CardSkeleton';
 import { Card } from '@/components/Card/Card';
+import { NoItems } from '@/components/NoItmes/NoItems';
 
 import styles from './ItemsPageContainer.module.scss';
 
@@ -53,6 +54,8 @@ export const ItemsPageContainer = ({ category, initialSelectedFilter }: Props) =
     const arr = Array.isArray(item) ? item : [item];
     return arr.filter((i) => i?.title && i?.realmName);
   }) ?? [];
+
+  console.log(items);
 
   useEffect(() => {
     const lastItemEle = lastItemRef.current;
@@ -134,6 +137,7 @@ export const ItemsPageContainer = ({ category, initialSelectedFilter }: Props) =
               </li>
             ))}
         </ul>
+        {!isFetching && items.length === 0 && <NoItems />}
       </div>
     </ScreenPaddingWrapper>
   );

@@ -1,0 +1,14 @@
+@use '@/styles/variables' as *;
+
+.noItems {
+  margin-top: 5rem;
+
+  .text {
+    font-size: 0.9rem;
+    text-align: center;
+
+    @include tablet {
+      font-size: 1rem;
+    }
+  }
+}
