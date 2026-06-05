@@ -1,6 +1,9 @@
 ## NATIONAL_CULTURAL_FESTIVAL
 문화축제정보 공공api를 이용해 만든 전국 각지의 문화·축제 안내 웹
 
+## 이미지
+<img width="1897" height="874" alt="image" src="https://github.com/user-attachments/assets/0b064ea8-c895-4ceb-8bb7-0ee2397ca761" />
+
 ## 배포 URL
 [https://bean-talk.vercel.app](https://national-cultural-festival.vercel.app/)
 
