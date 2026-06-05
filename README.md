@@ -5,7 +5,7 @@
 <img width="1897" height="874" alt="image" src="https://github.com/user-attachments/assets/0b064ea8-c895-4ceb-8bb7-0ee2397ca761" />
 
 ## 배포 URL
-[https://bean-talk.vercel.app](https://national-cultural-festival.vercel.app/)
+https://national-cultural-festival.vercel.app/
 
 ## 개발 인원
 1인 개발
