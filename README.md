@@ -64,8 +64,3 @@ npm run dev
 ├── README.md
 ├── tsconfig.json
 ```
-
-## 특징
-- tiptap과 kaka-maps를 이용한 사용자 친화적 WYSIWYG
-- 보안을 위한 API 프록시 구현
-- 유지보수를 위한 CoLocation 폴더 구조
