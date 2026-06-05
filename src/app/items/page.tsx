@@ -31,7 +31,11 @@ export default async function ItemsPage({ searchParams }: Props) {
     <main className={styles.itemsPage}>
       <ItemsHeroSection />
       <HydrationBoundary state={dehydrate(queryClient)}>
-        <ItemsPageContainer category={category || 'area'} />
+        <ItemsPageContainer
+          key={category}
+          category={category || 'area'}
+          initialSelectedFilter={category === 'area' ? '전체' : '행사/축제'}
+        />
       </HydrationBoundary>
     </main>
   );
