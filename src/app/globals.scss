@@ -25,6 +25,7 @@ body {
   padding-top: $header-height-mobile;
   background-color: $bg-base;
   font-family: var(--font-noto-sans-kr), sans-serif;
+  color: $text-base;
 
   @include tablet {
     padding-top: $header-height-tablet;

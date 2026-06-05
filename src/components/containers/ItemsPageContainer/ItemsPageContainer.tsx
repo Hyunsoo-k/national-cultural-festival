@@ -25,13 +25,14 @@ const REALM_FILTERS = Object.keys(REALMS) as RealmKey[];
 
 type Props = {
   category: Category;
+  initialSelectedFilter: '전체' | '행사/축제';
 };
 
-export const ItemsPageContainer = ({ category }: Props) => {
+export const ItemsPageContainer = ({ category, initialSelectedFilter }: Props) => {
   const isAreaCategory = category === 'area';
 
   const [selectedFilter, setSelectedFilter] = useState<AreaKey | RealmKey>(
-    isAreaCategory ? AREA_FILTERS[0] : REALM_FILTERS[0]
+    initialSelectedFilter
   );
 
   const lastItemRef = useRef<HTMLLIElement | null>(null);
@@ -54,8 +55,11 @@ export const ItemsPageContainer = ({ category }: Props) => {
   }) ?? [];
 
   useEffect(() => {
-    const target = lastItemRef.current;
-    if (!target) return;
+    const lastItemEle = lastItemRef.current;
+
+    if (!lastItemEle) {
+      return;
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -66,8 +70,11 @@ export const ItemsPageContainer = ({ category }: Props) => {
       { root: null, threshold: 0.7 }
     );
 
-    observer.observe(target);
-    return () => observer.disconnect();
+    observer.observe(lastItemEle);
+
+    return () => {
+      observer.disconnect();
+    }
   }, [hasNextPage, fetchNextPage, isFetching]);
 
   const handleCategoryClick = (nextCategory: Category) => {
@@ -120,7 +127,7 @@ export const ItemsPageContainer = ({ category }: Props) => {
               <Card item={item} />
             </li>
           ))}
-          {isFetching && hasNextPage &&
+          {isFetching || hasNextPage &&
             Array.from({ length: 12 }).map((_, idx) => (
               <li key={`skeleton-${idx}`} className={styles.item}>
                 <CardSkeleton />
