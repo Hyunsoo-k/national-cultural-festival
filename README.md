@@ -3,9 +3,6 @@
 
 ## 이미지
 <img width="1897" height="874" alt="image" src="https://github.com/user-attachments/assets/0b064ea8-c895-4ceb-8bb7-0ee2397ca761" />
-<img width="1889" height="934" alt="스크린샷 2026-06-06 004700" src="https://github.com/user-attachments/assets/2ef4286f-594b-403f-ac46-d0c7dd60ceba" />
-<img width="1898" height="874" alt="스크린샷 2026-06-06 004650" src="https://github.com/user-attachments/assets/6cea0ff7-9b88-4ab9-8644-017af015d5e2" />
-<img width="1919" height="876" alt="스크린샷 2026-06-06 004627" src="https://github.com/user-attachments/assets/8bbf8563-9c30-4d2c-a65a-5e9ca0f00979" />
 
 ## 배포 URL
 [https://bean-talk.vercel.app](https://national-cultural-festival.vercel.app/)
